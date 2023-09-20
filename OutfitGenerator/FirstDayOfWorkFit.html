@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF8">
+    <script>
+function setup() {
+  createCanvas(windowWidth, windowHeight, WEBGL);
+
+  smooth ();
+}
+
+
+function draw () {
+    background (255, 255, 255);
+}
+      function getRandomSentence () {
+    var index= Math.floor(Math.random() * (sentences.length));
+    return sentences[index];
+}
+
+var sentences= [
+  'wear a blue shirt, black pants and black shoes',
+  'wear a black shirt, black pants and black shoes',
+  'wear a white shirt, black pants and black shoes',
+  'wear a black shirt, blue pants and brown shoes',
+  'wear a blue shirt, blue pants and black shoes',
+  'wear a blue shirt, blue pants amd brown shoes',
+  'wear a black shirt, brown pants and black shoes',
+  'wear a black shirt, brown pants and brown shoes'
+
+];
+
+function scribble(){
+  var canvas = document.getElementById("woodcut");
+ var context = canvas.getContext("2d");
+  context.clearRect(0, 0, canvas.width, canvas.height);
+  context.font = "30px Arial";
+  context.fillStyle = "red";
+  context.textAlign = "center";
+};
+  </script>
+  </head>
+  <body>
+    <canvas id="woodcut" width="1000" height="100"
+style="border:10px solid #665599;">
+</canvas>
+<br>
+<button onclick="scribble()">scribble</button>
+  </body>
+</html>
